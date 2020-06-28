@@ -1,0 +1,37 @@
+<p>
+  <strong>Type:</strong>
+  <%= @change_impact.type %>
+</p>
+
+<p>
+  <strong>Priority:</strong>
+  <%= @change_impact.priority %>
+</p>
+
+<p>
+  <strong>Impact:</strong>
+  <%= @change_impact.impact %>
+</p>
+
+<p>
+  <strong>Environment impacted:</strong>
+  <%= @change_impact.environment_impacted %>
+</p>
+
+<p>
+  <strong>Resource requirements:</strong>
+  <%= @change_impact.resource_requirements %>
+</p>
+
+<p>
+  <strong>Test plan:</strong>
+  <%= @change_impact.test_plan %>
+</p>
+
+<p>
+  <strong>Roll back:</strong>
+  <%= @change_impact.roll_back %>
+</p>
+
+<%= link_to 'Edit', edit_change_impact_path(@change_impact) %> |
+<%= link_to 'Back', change_impacts_path %>

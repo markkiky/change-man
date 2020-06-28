@@ -1,0 +1,2 @@
+class ChangePriority < ApplicationRecord
+end

@@ -1,0 +1,42 @@
+<%= form_with(model: change_approve, local: true) do |form| %>
+  <% if change_approve.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(change_approve.errors.count, "error") %> prohibited this change_approve from being saved:</h2>
+
+      <ul>
+      <% change_approve.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="field">
+    <%= form.label :status %>
+    <%= select_tag "change_approve_status", raw("<option value='1'>Approve</option> <option value='2'>Decline</option>"), name: "change_approve[status]"%>
+  </div>
+
+  <div class="field">
+    <%= form.label :comments %>
+    <%= form.text_field :comments %>
+  </div>
+
+  <div class="field">
+    <%= form.label :scheduled_date %>
+    <%= form.date_select :scheduled_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :assigned_to %>
+    <%= form.text_area :assigned_to %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sign_off %>
+    <%= form.text_field :sign_off %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Staging results:</strong>
+  <%= @change_implementation.staging_results %>
+</p>
+
+<p>
+  <strong>Implementation results:</strong>
+  <%= @change_implementation.implementation_results %>
+</p>
+
+<p>
+  <strong>Implementation date:</strong>
+  <%= @change_implementation.implementation_date %>
+</p>
+
+<p>
+  <strong>Sign off:</strong>
+  <%= @change_implementation.sign_off %>
+</p>
+
+<%= link_to 'Edit', edit_change_implementation_path(@change_implementation) %> |
+<%= link_to 'Back', change_implementations_path %>

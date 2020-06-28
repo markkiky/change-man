@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  staging_results: MyString
+  implementation_results: MyString
+  implementation_date: 2020-06-24
+  sign_off: MyString
+
+two:
+  staging_results: MyString
+  implementation_results: MyString
+  implementation_date: 2020-06-24
+  sign_off: MyString

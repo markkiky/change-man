@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  request_no: 1
+  project: MyString
+  requested_by: 1
+  department: MyString
+  telephone: MyString
+  description: MyString
+  required_date: 2020-06-24
+  reason: MyString
+  sign_off: MyString
+  approval: MyString
+
+two:
+  request_no: 1
+  project: MyString
+  requested_by: 1
+  department: MyString
+  telephone: MyString
+  description: MyString
+  required_date: 2020-06-24
+  reason: MyString
+  sign_off: MyString
+  approval: MyString

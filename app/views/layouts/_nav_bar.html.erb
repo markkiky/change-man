@@ -1,0 +1,66 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand text-white"><%= @nav_title %></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <% if @nav_title == "Change Impacts"%>
+        <li class="nav-item active">
+          <a class="nav-link" href="<%= change_requests_path %>">Requests <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<%=  change_implementations_path%>">Implementation</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<%= change_approves_path %>">Approval</a>
+        </li>
+      <%elsif @nav_title == "Change Requests"%>
+        <li class="nav-item active">
+          <a class="nav-link" href="<%= change_impacts_path %>">Impacts <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<%=  change_implementations_path%>">Implementation</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<%= change_approves_path %>">Approval</a>
+        </li>
+      <%elsif @nav_title == "Change Implementations"%>
+        <li class="nav-item active">
+          <a class="nav-link" href="<%= change_impacts_path %>">Impacts <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<%=  change_requests_path%>">Requests</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<%= change_approves_path %>">Approval</a>
+        </li>
+      <%elsif @nav_title == "Change Approvals"%>
+        <li class="nav-item active">
+          <a class="nav-link" href="<%= change_requests_path %>">Requests <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<%=  change_impacts_path%>">Impacts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<%=  change_implementations_path%>">Implementation</a>
+        </li>
+      <%end%>
+      
+    </ul>
+    
+      
+      <% if user_signed_in? %>
+         <span class="text-white pr-3"><strong><%= current_user.email %></strong></span>
+        <%= link_to 'Edit profile', edit_user_registration_path, :class => 'btn btn-outline-secondary my-2 my-sm-0 text-white' %> |
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn btn-outline-danger my-2 my-sm-0 text-white'  %> <span class="pl-2"> </span>
+        <%= link_to 'New Request', new_change_request_path, class: "btn btn-outline-success my-2 my-sm-0 text-white" %>
+      <% else %>
+        <%= link_to "Sign up", new_user_registration_path, :class => 'btn btn-outline-success my-2 my-sm-0 text-white'  %> |
+        <%= link_to "Login", new_user_session_path, :class => 'btn btn-outline-secondary my-2 my-sm-0 text-white'  %>
+      <% end %>
+      <span class="pl-2"></span>
+      
+  </div>
+</nav>

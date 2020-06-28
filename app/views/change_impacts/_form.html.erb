@@ -1,0 +1,66 @@
+<%= form_with(model: change_impact, local: true) do |form| %>
+  <% if change_impact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(change_impact.errors.count, "error") %> prohibited this change_impact from being saved:</h2>
+
+      <ul>
+      <% change_impact.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= form.fields_for :types do |type| %>
+    <%= form.label :type %>
+    <%= collection_check_boxes :type, :type_ids, Type.all, :id ,:name, required: true do |b| %>
+      <%puts b.object.id%>
+      <br>
+      <%= b.label(class: 'mr-5 ml-3'){ b.check_box(class: "") + b.text } %>
+          <%# if b.object.id.in? @change_impact.type %>
+              
+              <%# b.label(class: 'mr-5 ml-3'){ b.check_box(checked: true) + b.text } %>
+          <%#else%>
+              <%# b.label(class: 'mr-5 ml-3'){ b.check_box(class: "") + b.text } %>
+          <%#end%>
+          
+      <% end %>
+  <%end%>
+  <%= form.fields_for :change_impact do |impact|%>
+
+  <%end%>
+  <div class="field">
+    <%= form.label :priority %>
+    <%= select_tag "priority", options_from_collection_for_select(ChangePriority.all, "id", "name"), name: "change_impact[priority]" %>
+  </div>
+
+  <div class="field">  
+    <%= form.label :impact %>
+    <%= select_tag "impact", options_from_collection_for_select(Impact.all, "id", "name"), name: "change_impact[impact]" %>
+  </div>
+
+  
+
+  <div class="field">
+    <%= form.label :environment_impacted %>
+    <%= form.text_field :environment_impacted %>
+  </div>
+
+ <%= form.fields_for :resource_requirement do |type| %>
+  <%= form.label :resource_requirements %>
+    <%= select_tag "resource_requirement", options_from_collection_for_select(ResourceRequirement.all, "id", "name"), name: "change_impact[resource_requirement]" %>
+  <%end%>
+
+  <div class="field">
+    <%= form.label :test_plan %>
+    <%= form.text_field :test_plan %>
+  </div>
+
+  <div class="field">
+    <%= form.label :roll_back %>
+    <%= form.text_field :roll_back %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

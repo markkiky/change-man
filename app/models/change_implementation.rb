@@ -1,0 +1,2 @@
+class ChangeImplementation < ApplicationRecord
+end

@@ -1,0 +1,27 @@
+<p>
+  <strong>Status:</strong>
+  <%= @change_approve.status %>
+</p>
+
+<p>
+  <strong>Comments:</strong>
+  <%= @change_approve.comments %>
+</p>
+
+<p>
+  <strong>Scheduled date:</strong>
+  <%= @change_approve.scheduled_date %>
+</p>
+
+<p>
+  <strong>Assigned to:</strong>
+  <%= @change_approve.assigned_to %>
+</p>
+
+<p>
+  <strong>Sign off:</strong>
+  <%= @change_approve.sign_off %>2
+</p>
+
+<%= link_to 'Edit', edit_change_approfe_path(@change_approve) %> |
+<%= link_to 'Back', change_approves_path %>

@@ -1,0 +1,2 @@
+class ChangeApprove < ApplicationRecord
+end

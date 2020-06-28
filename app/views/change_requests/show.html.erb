@@ -1,0 +1,76 @@
+<div class="card">
+<div class="card-body">
+<%= link_to change_requests_path, class: "btn btn-secondary btn--icon-text pr-3 text-white  " do %>
+    <i class="zmdi zmdi-arrow-back "></i>
+  Back
+<%end%>
+<%= link_to edit_change_request_path(@change_request), class: "btn btn-primary btn--icon-text text-white pr-3 " do %>
+  <i class="zmdi zmdi-edit "></i>
+  Edit
+<%end%>
+
+<form>
+  <div class="form-group row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Request Number</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<%= @request_no %>">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputPassword" class="col-sm-2 col-form-label">Project Name</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control-plaintext" id="inputPassword" value= "<%= @change_request.project %>">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputPassword" class="col-sm-2 col-form-label">Requested By</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control-plaintext" id="requested_by" value= "<%= @requested_by %>">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputPassword" class="col-sm-2 col-form-label">Department</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control-plaintext" id="inputPassword" value= "<%= @department %>">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputPassword" class="col-sm-2 col-form-label">Telephone</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control-plaintext" id="inputPassword" value= "<%= @change_request.telephone %>">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="description" class="col-sm-2 col-form-label">Description</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control-plaintext" id="description" value= "<%= @change_request.description %>">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="required_date" class="col-sm-2 col-form-label">Date its Required</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control-plaintext" id="required_date" value= "<%= @change_request.required_date %>">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="reason" class="col-sm-2 col-form-label">Reason for Change</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control-plaintext" id="reason" value= "<%= @change_request.reason %>">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="sign_off" class="col-sm-2 col-form-label">Sign Off</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control-plaintext" id="sign_off" value= "<%= @change_request.sign_off %>">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="approval" class="col-sm-2 col-form-label">Approval</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control-plaintext" id="approval" value= "<%= @approval %>">
+    </div>
+  </div>
+</form>
+</div>
+</div>
+

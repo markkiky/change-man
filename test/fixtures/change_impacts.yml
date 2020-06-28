@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 1
+  priority: 1
+  impact: 1
+  environment_impacted: MyString
+  resource_requirements: 1
+  test_plan: MyString
+  roll_back: MyString
+
+two:
+  type: 1
+  priority: 1
+  impact: 1
+  environment_impacted: MyString
+  resource_requirements: 1
+  test_plan: MyString
+  roll_back: MyString

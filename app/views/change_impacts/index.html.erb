@@ -1,0 +1,70 @@
+<div class="card">
+  <div class="card-body">
+
+<table id="requestsDatatable" class="table table-striped table-bordered" style="width:100%">
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Priority</th>
+                <th>Impact</th>
+                <th>Environment Impacted</th>
+                <th>Test Plan</th>
+                <th>Roll back Plan</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+          <% @change_impacts.each do |change_impact| %>
+            <tr>
+              
+                <td><%= change_impact.type %></td>
+                <% if change_impact.priority == nil%>
+                  <td><%= %></td>
+                <%else%>
+                  <td><%= ChangePriority.find(change_impact.priority).name %></td>
+                <%end%>
+                <% if change_impact.impact == nil%>
+                  <td><%= %></td>
+                <%else%>
+                  <td><%= Impact.find(change_impact.impact).name %></td>
+                <%end%>
+                
+                <td><%= change_impact.environment_impacted %></td>
+                
+                <td><%= change_impact.test_plan %></td>
+                <td><%= change_impact.roll_back %></td>
+                <td>
+                  <div class="btn-group" role="group" aria-label="Basic example">
+                    <%= link_to 'Show', change_impact_path(change_impact.id), class: "btn btn-secondary" %><span class="pr-1"></span>
+                    <%= link_to 'Edit', edit_change_impact_path(change_impact.id), class: "btn btn-secondary" %><span class="pr-1"></span>
+                    <%= link_to 'Change Approve', edit_change_approfe_path(change_impact.id), class: "btn btn-secondary"%>
+                    
+                  </div>
+                  
+                </td>
+              
+            </tr>
+          <%end%>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Type</th>
+                <th>Priority</th>
+                <th>Impact</th>
+                <th>Environment Impacted</th>
+                <th>Test Plan</th>
+                <th>Roll back Plan</th>
+                <th>Actions</th>
+            </tr>
+        </tfoot>
+
+  </table>
+  </div>
+</div>
+<script>
+  $(document).ready(function() {
+    $('#requestsDatatable').DataTable();
+  } );
+
+  $('#requestsDatatable')
+</script>
